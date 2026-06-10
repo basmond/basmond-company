@@ -23,31 +23,6 @@ const archiveItems = [
     date: "25-05-29",
     title: "Dave Free for Bottega Veneta.",
     videoId: "dQw4w9WgXcQ"
-  },
-  {
-    date: "25-05-25",
-    title: "lose.",
-    videoId: "dQw4w9WgXcQ"
-  },
-  {
-    date: "25-04-22",
-    title: "Kendrick Lamar for Chanel.",
-    videoId: "dQw4w9WgXcQ"
-  },
-  {
-    date: "25-04-19",
-    title: "Grand National Tour.",
-    videoId: "dQw4w9WgXcQ"
-  },
-  {
-    date: "25-04-11",
-    title: "luther.",
-    videoId: "dQw4w9WgXcQ"
-  },
-  {
-    date: "25-03-18",
-    title: "Most Innovative Companies 2025.",
-    videoId: "dQw4w9WgXcQ"
   }
 ];
 
@@ -66,9 +41,8 @@ archive.innerHTML = archiveItems
           </button>
         </div>
 
-        <div class="release-player" id="player-${index}">
+        <div class="release-player" hidden>
           <iframe
-            src=""
             title="${item.title}"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
@@ -83,24 +57,33 @@ const buttons = document.querySelectorAll(".archive-link");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    const index = button.dataset.index;
+    const index = Number(button.dataset.index);
     const item = archiveItems[index];
-    const player = document.querySelector(`#player-${index}`);
-    const iframe = player.querySelector("iframe");
-    const isOpen = player.classList.contains("is-open");
+    const currentPlayer = button
+      .closest(".archive-item")
+      .querySelector(".release-player");
+    const currentIframe = currentPlayer.querySelector("iframe");
 
-    document.querySelectorAll(".release-player").forEach((el) => {
-      el.classList.remove("is-open");
-      el.querySelector("iframe").src = "";
+    const wasOpen = !currentPlayer.hidden;
+
+    document.querySelectorAll(".release-player").forEach((player) => {
+      player.hidden = true;
+      player.classList.remove("is-open");
+      player.querySelector("iframe").src = "";
     });
 
     document.querySelectorAll(".archive-link").forEach((btn) => {
       btn.classList.remove("is-active");
     });
 
-    if (!isOpen) {
-      iframe.src = `https://www.youtube.com/embed/${item.videoId}?autoplay=1&rel=0`;
-      player.classList.add("is-open");
+    if (!wasOpen) {
+      currentIframe.src = `https://www.youtube.com/embed/${item.videoId}?rel=0`;
+      currentPlayer.hidden = false;
+
+      requestAnimationFrame(() => {
+        currentPlayer.classList.add("is-open");
+      });
+
       button.classList.add("is-active");
     }
   });
