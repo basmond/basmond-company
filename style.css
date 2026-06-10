@@ -233,19 +233,6 @@ body {
   object-fit: contain;
 }
 
-/* пока своего logo.png нет — будет аккуратная заглушка */
-.footer-logo img[src="logo.png"] {
-  opacity: 0;
-}
-
-.footer-logo::before {
-  content: "b";
-  position: absolute;
-  font-size: 38px;
-  color: var(--text);
-  opacity: 0.86;
-}
-
 @media (max-width: 700px) {
   .topbar {
     padding: 0 22px;
