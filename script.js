@@ -2,7 +2,7 @@ const archiveItems = [
   {
     date: "25-12-28",
     title: "Bachelors Ballad by frea twee.",
-    videoId: "YPmwZEFNPwM&t"
+    videoId: "YPmwZEFNPwM"
   },
   {
     date: "25-05-02",
@@ -18,6 +18,11 @@ const archiveItems = [
     date: "25-02-09",
     title: "VICES by shawn wayne.",
     videoId: "0YeQUmZ34_k"
+  },
+  {
+    date: "25-01-12",
+    title: "shawn wayne win 2 sanboard awards for Hydration We Need.",
+    url: "https://tagger.gambit-rp.com/pages/sanboard"
   },
   {
     date: "24-11-22",
@@ -86,14 +91,22 @@ buttons.forEach((button) => {
       btn.classList.remove("is-active");
     });
 
+    if (!item.videoId) {
+      if (item.url) {
+        window.location.href = item.url;
+      }
+    
+      return;
+    }
+    
     if (!wasOpen) {
       currentIframe.src = `https://www.youtube.com/embed/${item.videoId}?rel=0`;
       currentPlayer.hidden = false;
-
+    
       requestAnimationFrame(() => {
         currentPlayer.classList.add("is-open");
       });
-
+    
       button.classList.add("is-active");
     }
   });
