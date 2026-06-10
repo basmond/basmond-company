@@ -347,7 +347,7 @@ body {
   
   .release-player {
     display: grid;
-    grid-template-columns: 118px minmax(0, 560px);
+    grid-template-columns: 118px minmax(0, 1120px);
     gap: 34px;
     margin: 12px 0 24px;
     opacity: 0;
@@ -364,7 +364,7 @@ body {
   
   .release-player iframe {
     grid-column: 2;
-    width: 100%;
+    width: min(100%, 1120px);
     aspect-ratio: 16 / 9;
     border: 1px solid rgba(233, 228, 216, 0.16);
     border-radius: 10px;
