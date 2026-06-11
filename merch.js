@@ -1,13 +1,13 @@
 const merchItems = [
   {
-    name: "bввe",
-    image: "merch/tee-white.png",
+    name: "basMond Hoodie",
+    image: "merch/hoodie.png",
     status: "Buy",
     url: "https://example.com"
   },
   {
-    name: "basMond Hoodie",
-    image: "merch/hoodie-black.png",
+    name: "basMond Tee",
+    image: "merch/tee.png",
     status: "Buy",
     url: "https://example.com"
   },
@@ -18,38 +18,32 @@ const merchItems = [
     url: ""
   },
   {
-    name: "basMond Longsleeve",
-    image: "merch/longsleeve.png",
-    status: "Buy",
-    url: "https://example.com"
-  },
-  {
     name: "basMond Poster",
     image: "merch/poster.png",
-    status: "Sold out",
-    url: ""
+    status: "Buy",
+    url: "https://example.com"
   }
 ];
 
-const merchGrid = document.querySelector("#merchGrid");
+const shopGrid = document.querySelector("#shopGrid");
 
-merchGrid.innerHTML = merchItems
+shopGrid.innerHTML = merchItems
   .map((item) => {
-    const isSoldOut = item.status.toLowerCase() === "sold out";
+    const soldOut = item.status.toLowerCase() === "sold out";
 
     return `
-      <article class="merch-card">
-        <div class="merch-image-wrap">
-          <img src="${item.image}" alt="${item.name}" class="merch-image" />
+      <article class="shop-card">
+        <div class="shop-image-box">
+          <img src="${item.image}" alt="${item.name}" class="shop-image">
         </div>
 
-        <div class="merch-info">
-          <h2 class="merch-title">${item.name}</h2>
+        <div class="shop-info">
+          <h2 class="shop-title">${item.name}</h2>
 
           ${
-            isSoldOut
-              ? `<span class="merch-status is-sold-out">Sold out</span>`
-              : `<a class="merch-status" href="${item.url}" target="_blank" rel="noopener">Buy</a>`
+            soldOut
+              ? `<span class="shop-action is-sold-out">Sold out</span>`
+              : `<a class="shop-action" href="${item.url}" target="_blank" rel="noopener">Buy</a>`
           }
         </div>
       </article>
