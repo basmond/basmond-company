@@ -1,6 +1,6 @@
 const merchItems = [
   {
-    name: "basMond Tee",
+    name: "bввe",
     image: "merch/tee-white.png",
     status: "Buy",
     url: "https://example.com"
