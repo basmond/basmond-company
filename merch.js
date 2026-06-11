@@ -18,10 +18,10 @@ const merchItems = [
     url: ""
   },
   {
-    name: "basMond Poster",
-    image: "merch/poster.png",
-    status: "Buy",
-    url: "https://example.com"
+    name: "basMond x sony t610 phone",
+    image: "merch/1phone.png",
+    status: "299$",
+    url: ""
   }
 ];
 
