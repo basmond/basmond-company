@@ -1,27 +1,33 @@
 const merchItems = [
   {
-    name: "basMond Hoodie",
-    image: "merch/hoodie.png",
+    name: "basMond san andreas t-shirt white 50$",
+    image: "merch/1shirt.png",
     status: "Buy",
-    url: "https://example.com"
+    url: "https://tagger.gambit-rp.com/pages/basmond"
   },
   {
-    name: "basMond Tee",
-    image: "merch/tee.png",
+    name: "basMond panama hat 15$",
+    image: "merch/1panama.png",
     status: "Buy",
-    url: "https://example.com"
+    url: "https://tagger.gambit-rp.com/pages/basmond"
   },
   {
-    name: "Records Cap",
-    image: "merch/cap.png",
-    status: "Sold out",
-    url: ""
+    name: "basMond sweater 125$",
+    image: "merch/1sweater.png",
+    status: "Buy",
+    url: "https://tagger.gambit-rp.com/pages/basmond"
   },
   {
-    name: "basMond x sony t610 phone",
+    name: "basMond x sony t610 phone 299$",
     image: "merch/1phone.png",
-    status: "299$",
-    url: ""
+    status: "Buy",
+    url: "https://tagger.gambit-rp.com/pages/basmond"
+  },
+  {
+    name: "basMond san andreas t-shirt green 50$",
+    image: "merch/2shirt.png",
+    status: "Buy",
+    url: "https://tagger.gambit-rp.com/pages/basmond"
   }
 ];
 
