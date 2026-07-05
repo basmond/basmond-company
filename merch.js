@@ -8,25 +8,25 @@ const merchItems = [
   {
     name: "basMond panama hat 15$",
     image: "merch/1panama.png",
-    status: "Buy",
+    status: "Sold out",
     url: "https://tagger.gambit-rp.com/pages/basmond"
   },
   {
     name: "basMond sweater 125$",
     image: "merch/1sweater.png",
-    status: "Buy",
+    status: "Sold out",
     url: "https://tagger.gambit-rp.com/pages/basmond"
   },
   {
     name: "basMond x sony t610 phone 299$",
     image: "merch/1phone.png",
-    status: "Buy",
+    status: "Sold out",
     url: "https://tagger.gambit-rp.com/pages/basmond"
   },
   {
     name: "basMond san andreas t-shirt green 50$",
     image: "merch/2shirt.png",
-    status: "Buy",
+    status: "Sold out",
     url: "https://tagger.gambit-rp.com/pages/basmond"
   }
 ];
