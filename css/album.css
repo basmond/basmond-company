@@ -181,3 +181,16 @@ body{
     text-align:right;
 
 }
+
+.active{
+
+    color:#1ED760;
+
+}
+
+.active .track-number,
+.active .track-duration{
+
+    color:#1ED760;
+
+}
