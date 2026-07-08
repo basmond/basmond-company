@@ -12,7 +12,7 @@ function playTrack(index){
 
     audio.play();
 
-    player.style.display="flex";
+    player.classList.add("show");
 
     document.getElementById("playerTitle").textContent=
     tracks[index].title;
