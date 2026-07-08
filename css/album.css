@@ -194,3 +194,15 @@ body{
     color:#1ED760;
 
 }
+
+.track.active{
+
+    background:#242424;
+
+}
+
+.track.active .track-title{
+
+    color:#1ed760;
+
+}
