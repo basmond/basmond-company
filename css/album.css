@@ -1,0 +1,89 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#121212;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.album-header{
+
+    display:flex;
+    align-items:flex-end;
+
+    gap:35px;
+
+    padding:60px;
+
+    height:420px;
+
+    background:linear-gradient(#c15d2f,#742010,#121212);
+}
+
+.cover{
+
+    width:240px;
+
+    height:240px;
+
+    object-fit:cover;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+
+}
+
+.album-info{
+
+    margin-bottom:10px;
+
+}
+
+.album-type{
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}
+
+.album-info h1{
+
+    font-size:82px;
+
+    margin:12px 0;
+
+    font-weight:900;
+
+}
+
+.album-info p{
+
+    color:#d5d5d5;
+
+}
+
+.play-btn{
+
+    margin-top:35px;
+
+    width:64px;
+
+    height:64px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#1ED760;
+
+    color:black;
+
+    font-size:26px;
+
+    cursor:pointer;
+
+}
