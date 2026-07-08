@@ -1,3 +1,7 @@
+/* ===========================
+   RESET
+=========================== */
+
 *{
     margin:0;
     padding:0;
@@ -9,6 +13,10 @@ body{
     color:white;
     font-family:Arial, Helvetica, sans-serif;
 }
+
+/* ===========================
+   HEADER
+=========================== */
 
 .album-header{
 
@@ -27,12 +35,11 @@ body{
 .cover{
 
     width:240px;
-
     height:240px;
 
     object-fit:cover;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.4);
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
 
 }
 
@@ -45,37 +52,38 @@ body{
 .album-type{
 
     font-size:14px;
-
-    font-weight:bold;
+    font-weight:700;
 
 }
 
 .album-info h1{
 
     font-size:82px;
+    font-weight:900;
 
     margin:12px 0;
-
-    font-weight:900;
 
 }
 
 .album-info p{
 
-    color:#d5d5d5;
+    color:#d2d2d2;
+    font-size:15px;
 
 }
+
+/* ===========================
+   PLAY BUTTON
+=========================== */
 
 .play-btn{
 
     margin-top:35px;
 
     width:64px;
-
     height:64px;
 
     border:none;
-
     border-radius:50%;
 
     background:#1ED760;
@@ -85,5 +93,91 @@ body{
     font-size:26px;
 
     cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.play-btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================
+   TRACK LIST
+=========================== */
+
+.track-list{
+
+    padding:30px 60px 120px;
+
+}
+
+.tracks-header{
+
+    display:grid;
+
+    grid-template-columns:60px 1fr 90px;
+
+    align-items:center;
+
+    color:#b3b3b3;
+
+    font-size:14px;
+
+    padding:0 16px 16px;
+
+    border-bottom:1px solid #2b2b2b;
+
+    margin-bottom:8px;
+
+}
+
+.track{
+
+    display:grid;
+
+    grid-template-columns:60px 1fr 90px;
+
+    align-items:center;
+
+    height:58px;
+
+    padding:0 16px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    transition:.15s;
+
+}
+
+.track:hover{
+
+    background:#2a2a2a;
+
+}
+
+.track-number{
+
+    color:#b3b3b3;
+
+    font-size:16px;
+
+}
+
+.track-title{
+
+    font-size:16px;
+
+}
+
+.track-duration{
+
+    color:#b3b3b3;
+
+    text-align:right;
 
 }
