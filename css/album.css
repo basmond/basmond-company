@@ -1,26 +1,28 @@
-/* ===========================
-   RESET
-=========================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+
 body{
+
     background:#121212;
+
     color:white;
+
     font-family:Arial, Helvetica, sans-serif;
+
 }
 
-/* ===========================
-   HEADER
-=========================== */
+
+/* HEADER */
+
 
 .album-header{
 
     display:flex;
+
     align-items:flex-end;
 
     gap:35px;
@@ -30,83 +32,71 @@ body{
     height:420px;
 
     background:linear-gradient(#c15d2f,#742010,#121212);
+
 }
+
 
 .cover{
 
     width:240px;
+
     height:240px;
 
     object-fit:cover;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.45);
-
 }
 
-.album-info{
 
-    margin-bottom:10px;
 
-}
+/* INFO */
 
-.album-type{
-
-    font-size:14px;
-    font-weight:700;
-
-}
 
 .album-info h1{
 
     font-size:82px;
-    font-weight:900;
 
     margin:12px 0;
 
 }
 
+
 .album-info p{
 
-    color:#d2d2d2;
-    font-size:15px;
+    color:#aaa;
 
 }
 
-/* ===========================
-   PLAY BUTTON
-=========================== */
+
+
+
+/* PLAY */
+
 
 .play-btn{
 
     margin-top:35px;
 
     width:64px;
+
     height:64px;
 
-    border:none;
     border-radius:50%;
 
-    background:#1ED760;
+    border:none;
 
-    color:black;
+    background:#1ED760;
 
     font-size:26px;
 
     cursor:pointer;
 
-    transition:.2s;
-
 }
 
-.play-btn:hover{
 
-    transform:scale(1.05);
 
-}
 
-/* ===========================
-   TRACK LIST
-=========================== */
+/* TRACKS */
+
 
 .track-list{
 
@@ -114,45 +104,47 @@ body{
 
 }
 
+
+
 .tracks-header{
 
     display:grid;
 
-    grid-template-columns:60px 1fr 90px;
+    grid-template-columns:60px 1fr 120px 100px 80px;
 
-    align-items:center;
+    color:#aaa;
 
-    color:#b3b3b3;
+    padding:15px;
 
-    font-size:14px;
-
-    padding:0 16px 16px;
-
-    border-bottom:1px solid #2b2b2b;
-
-    margin-bottom:8px;
+    border-bottom:1px solid #333;
 
 }
+
+
 
 .track{
 
     display:grid;
 
-    grid-template-columns:60px 1fr 90px;
+    grid-template-columns:
+
+    60px 
+    1fr
+    120px
+    100px
+    80px;
+
+
+    height:60px;
 
     align-items:center;
 
-    height:58px;
-
-    padding:0 16px;
+    padding:0 15px;
 
     border-radius:6px;
 
-    cursor:pointer;
-
-    transition:.15s;
-
 }
+
 
 .track:hover{
 
@@ -160,92 +152,15 @@ body{
 
 }
 
-.track-number{
 
-    color:#b3b3b3;
-
-    font-size:16px;
-
-}
-
-.track-title{
-
-    font-size:16px;
-
-}
-
-.track-duration{
-
-    color:#b3b3b3;
-
-    text-align:right;
-
-}
-
-.active{
-
-    color:#1ED760;
-
-}
-
-.active .track-number,
-.active .track-duration{
-
-    color:#1ED760;
-
-}
-
-.track.active{
-
-    background:#242424;
-
-}
-
-.track.active .track-title{
-
-    color:#1ed760;
-
-}
-
-.track:hover .track-number{
-
-    color:white;
-
-}
-
-.track:hover .track-duration{
-
-    color:white;
-
-}
-
-.play-btn{
-
-    box-shadow:0 8px 30px rgba(30,215,96,.35);
-
-}
-
-.play-btn:hover{
-
-    transform:scale(1.08);
-
-}
-
-.player.show{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateY(0);
-
-}
 
 .track-number{
 
-    position:relative;
+    color:#aaa;
 
 }
+
+
 
 .play-icon{
 
@@ -253,16 +168,89 @@ body{
 
 }
 
+
 .track:hover .number{
 
     display:none;
 
 }
 
+
 .track:hover .play-icon{
 
     display:inline;
 
+}
+
+
+
+.track-title{
+
+    font-size:16px;
+
+}
+
+
+
+.track-plays{
+
+    color:#aaa;
+
+}
+
+
+
+.track-duration{
+
+    color:#aaa;
+
+    text-align:right;
+
+}
+
+
+
+
+.lyrics-btn{
+
+
+    background:none;
+
+    border:1px solid #555;
+
     color:white;
+
+    border-radius:15px;
+
+    padding:5px 12px;
+
+    cursor:pointer;
+
+}
+
+
+
+.lyrics-btn:hover{
+
+
+    background:#1ED760;
+
+    color:black;
+
+}
+
+
+
+
+.active{
+
+    color:#1ED760;
+
+}
+
+
+.track.active{
+
+    background:#242424;
 
 }
