@@ -7,7 +7,15 @@ tracks.forEach((track,index)=>{
     <div class="track" data-index="${index}">
 
         <div class="track-number">
+        
+            <span class="number">
             ${index+1}
+            </span>
+            
+            <span class="play-icon">
+            ▶
+            </span>
+            
         </div>
 
         <div class="track-title">
