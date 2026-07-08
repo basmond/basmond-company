@@ -206,3 +206,37 @@ body{
     color:#1ed760;
 
 }
+
+.track:hover .track-number{
+
+    color:white;
+
+}
+
+.track:hover .track-duration{
+
+    color:white;
+
+}
+
+.play-btn{
+
+    box-shadow:0 8px 30px rgba(30,215,96,.35);
+
+}
+
+.play-btn:hover{
+
+    transform:scale(1.08);
+
+}
+
+.player.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
