@@ -1,58 +1,86 @@
 const tracksContainer = document.getElementById("tracks");
 
 
-tracks.forEach((track,index)=>{
+let allTracks = [];
+
+let number = 1;
+
+
+
+albumTracks.forEach(disk=>{
+
+
+tracksContainer.innerHTML += `
+
+<div class="disk-title">
+
+    💿 ${disk.disk}
+
+</div>
+
+`;
+
+
+
+disk.tracks.forEach(track=>{
+
+
+track.id = allTracks.length;
+
+allTracks.push(track);
+
 
 
 tracksContainer.innerHTML += `
 
 
-<div class="track" data-index="${index}">
+<div class="track" data-index="${track.id}">
 
 
-    <div class="track-number">
+<div class="track-number">
 
-        <span class="number">
-            ${index+1}
-        </span>
+<span class="number">
+${number}
+</span>
 
-        <span class="play-icon">
-            ▶
-        </span>
+<span class="play-icon">
+▶
+</span>
 
-    </div>
-
-
-
-    <div class="track-title">
-
-        ${track.title}
-
-    </div>
+</div>
 
 
+<div class="track-title">
 
-    <div class="track-plays">
+${track.title}
 
-        ${track.plays}
-
-    </div>
+</div>
 
 
 
-    <button class="lyrics-btn" data-lyrics="${index}">
+<div class="track-plays">
 
-        Lyrics
+${track.plays}
 
-    </button>
+</div>
 
 
 
-    <div class="track-duration">
 
-        ${track.duration}
+<button class="lyrics-btn" data-id="${track.id}">
 
-    </div>
+Lyrics
+
+</button>
+
+
+
+
+<div class="track-duration">
+
+${track.duration}
+
+</div>
 
 
 </div>
@@ -60,19 +88,24 @@ tracksContainer.innerHTML += `
 
 `;
 
+number++;
+
+
+});
+
 
 });
 
 
 
+tracks = allTracks;
 
 
-// запуск трека
 
 document.querySelectorAll(".track").forEach(track=>{
 
 
-track.addEventListener("click",(e)=>{
+track.onclick=(e)=>{
 
 
 if(e.target.classList.contains("lyrics-btn"))
@@ -82,7 +115,7 @@ return;
 playTrack(Number(track.dataset.index));
 
 
-});
+};
 
 
 });
@@ -90,21 +123,17 @@ playTrack(Number(track.dataset.index));
 
 
 
-// открытие текста
 
-document.querySelectorAll(".lyrics-btn").forEach(button=>{
-
-
-button.addEventListener("click",()=>{
+document.querySelectorAll(".lyrics-btn").forEach(btn=>{
 
 
-const index = button.dataset.lyrics;
+btn.onclick=()=>{
 
 
-openLyrics(index);
+openLyrics(btn.dataset.id);
 
 
-});
+};
 
 
 });
@@ -112,12 +141,41 @@ openLyrics(index);
 
 
 
-// окно текста
 
-function openLyrics(index){
+function openLyrics(id){
 
 
-alert(tracks[index].lyrics);
+document
+.getElementById("lyricsText")
+.textContent =
+tracks[id].lyrics;
+
+
+
+document
+.getElementById("lyricsTitle")
+.textContent =
+tracks[id].title;
+
+
+
+document
+.getElementById("lyricsModal")
+.classList.add("open");
 
 
 }
+
+
+
+document
+.getElementById("closeLyrics")
+.onclick=()=>{
+
+
+document
+.getElementById("lyricsModal")
+.classList.remove("open");
+
+
+};
