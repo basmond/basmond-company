@@ -1,1 +1,25 @@
+const tracksContainer = document.getElementById("tracks");
 
+tracks.forEach((track, index) => {
+
+    tracksContainer.innerHTML += `
+
+        <div class="track" data-index="${index}">
+
+            <div class="track-number">
+                ${index + 1}
+            </div>
+
+            <div class="track-title">
+                ${track.title}
+            </div>
+
+            <div class="track-duration">
+                ${track.duration}
+            </div>
+
+        </div>
+
+    `;
+
+});
