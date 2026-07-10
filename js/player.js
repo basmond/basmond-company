@@ -142,3 +142,17 @@ albumPlay.onclick=()=>{
 playTrack(0);
 
 };
+
+const progressBar = document.getElementById("progressBar");
+
+audio.addEventListener("loadedmetadata", () => {
+    progressBar.max = audio.duration;
+});
+
+audio.addEventListener("timeupdate", () => {
+    progressBar.value = audio.currentTime;
+});
+
+progressBar.addEventListener("input", () => {
+    audio.currentTime = progressBar.value;
+});
