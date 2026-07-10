@@ -144,15 +144,31 @@ playTrack(0);
 };
 
 const progressBar = document.getElementById("progressBar");
+const currentTime = document.getElementById("currentTime");
+const durationTime = document.getElementById("durationTime");
 
+function formatTime(seconds) {
+    if (isNaN(seconds)) return "0:00";
+
+    const min = Math.floor(seconds / 60);
+    const sec = Math.floor(seconds % 60);
+
+    return `${min}:${sec.toString().padStart(2, "0")}`;
+}
+
+// Когда загрузился трек
 audio.addEventListener("loadedmetadata", () => {
     progressBar.max = audio.duration;
+    durationTime.textContent = formatTime(audio.duration);
 });
 
+// Во время воспроизведения
 audio.addEventListener("timeupdate", () => {
     progressBar.value = audio.currentTime;
+    currentTime.textContent = formatTime(audio.currentTime);
 });
 
+// Перемотка
 progressBar.addEventListener("input", () => {
     audio.currentTime = progressBar.value;
 });
