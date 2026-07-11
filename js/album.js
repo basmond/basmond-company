@@ -179,3 +179,17 @@ document
 
 
 };
+
+const lyricsModal = document.getElementById("lyricsModal");
+
+lyricsModal.addEventListener("click", (event) => {
+    if (event.target === lyricsModal) {
+        lyricsModal.classList.remove("open");
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        lyricsModal.classList.remove("open");
+    }
+});
