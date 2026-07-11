@@ -5,8 +5,11 @@ let currentTrack = 0;
 
 
 const player = document.getElementById("player");
-
-
+const playPauseBtn = document.getElementById("playPauseBtn");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const albumPlay = document.getElementById("albumPlay");
+const playerTitle = document.getElementById("playerTitle");
 
 function playTrack(index){
 
@@ -22,8 +25,7 @@ player.classList.add("show");
 
 
 
-document.getElementById("playerTitle").textContent =
-tracks[index].title;
+playerTitle.textContent = tracks[index].title;
 
 
 
