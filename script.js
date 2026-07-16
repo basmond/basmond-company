@@ -1,8 +1,13 @@
 const archiveItems = [
   {
+    date: "26-07-17",
+    title: "Pulp Fiction: Von Casus Belli by shawn wayne.",
+    url: "https://basmond.github.io/basmond-company/albums.html"
+  },
+  {
     date: "26-07-13",
     title: "hugh hefner by silentbleak.",
-    videoId: "https://drive.google.com/file/d/1IZqcoF6_Whm39fNXFZylECC4e9v2Dgci/view?usp=drivesdk"
+    url: "https://drive.google.com/file/d/1IZqcoF6_Whm39fNXFZylECC4e9v2Dgci/view?usp=drivesdk"
   },
   {
     date: "26-07-08",
